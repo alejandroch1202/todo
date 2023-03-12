@@ -1,0 +1,16 @@
+.container {
+  background-color: var(--white);
+  width: min(80rem, 80%);
+  border-radius: 2rem;
+  -webkit-box-shadow: -4px 4px 51px 6px rgba(33, 33, 34, 1);
+  -moz-box-shadow: -4px 4px 51px 6px rgba(33, 33, 34, 1);
+  box-shadow: -4px 4px 51px 6px rgba(33, 33, 34, 1);
+}
+
+.app {
+  display: grid;
+  margin: 2rem 0 8rem 0;
+  gap: 2rem;
+  grid-template-columns: 1fr 1fr;
+  padding: 0 2rem;
+}

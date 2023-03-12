@@ -1,0 +1,33 @@
+:root {
+  --main-font: "Ubuntu", sans-serif;
+  --white: #ffffff;
+  --black: #000000;
+  --primary: #4ea7b9;
+  --secondary: #efeeee;
+  --gray: #4f4e4e;
+  --dark: #212122;
+  --sm: 1.4rem;
+  --md: 1.8rem;
+  --lg: 2rem;
+  --xl: 2.4rem;
+}
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+body {
+  font-family: var(--main-font);
+}
+#root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: var(--gray);
+}

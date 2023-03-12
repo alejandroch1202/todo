@@ -1,0 +1,43 @@
+aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 2rem;
+
+  h1 {
+    color: var(--gray);
+    margin-left: 1rem;
+  }
+
+  .progress {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+    padding: 2rem;
+
+    p {
+      font-size: var(--md);
+      color: var(--dark);
+    }
+
+    img {
+      width: 12rem;
+    }
+  }
+
+  .add {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      width: 3rem;
+    }
+
+    h2 {
+      margin-left: 1rem;
+      font-size: var(--lg);
+    }
+  }
+}

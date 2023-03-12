@@ -1,0 +1,26 @@
+main {
+  h1 {
+    color: var(--gray);
+    margin-left: 1rem;
+  }
+
+  .tasks {
+    background-color: var(--secondary);
+    border-radius: 2rem;
+    padding: 2rem;
+  }
+
+  .task {
+    display: flex;
+    gap: 2rem;
+
+    img {
+      width: 2.5rem;
+    }
+
+    p {
+      font-size: var(--lg);
+      margin: 1rem 0;
+    }
+  }
+}
