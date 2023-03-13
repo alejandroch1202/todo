@@ -1,14 +1,22 @@
 import { useState } from "react";
 
 const useGlobalState = () => {
-  const initalState = { tasks: [{ title: "Add your task...", done: false }] };
+  const initalState = {
+    tasks: [
+      { title: "Tasks finished", done: true },
+      { title: "Task in progress", done: false },
+    ],
+  };
 
   const [state, setState] = useState(initalState);
 
   const addTask = (task) => {
     setState({
       ...state,
-      tasks: state.tasks.includes(task) ? state.tasks : [...state.tasks, task],
+      tasks:
+        state.tasks.filter((items) => items.title === task.title).length > 0
+          ? state.tasks
+          : [...state.tasks, task],
     });
   };
 

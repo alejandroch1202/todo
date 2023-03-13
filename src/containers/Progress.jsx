@@ -7,20 +7,31 @@ import "react-circular-progressbar/dist/styles.css";
 import "@styles/Progress.scss";
 
 const Progress = () => {
-  const { showAddTask, toggleAddTask } = useContext(AppContext);
+  const { state, showAddTask, toggleAddTask } = useContext(AppContext);
+  const tasks = state.tasks;
+  const totalTasks = tasks.length;
+
+  const inProgress = tasks.filter((task) => task.done === false).length;
+  const finished = tasks.filter((task) => task.done === true).length;
+
   const [percentage, setPercentage] = useState(0);
 
   useEffect(() => {
-    setPercentage(60);
-  }, [percentage]);
+    if (totalTasks) {
+      const per = ((finished * 100) / totalTasks).toFixed(0);
+      setPercentage(per);
+    } else {
+      setPercentage(100);
+    }
+  }, [percentage, totalTasks, finished, inProgress]);
 
   return (
     <aside>
       <h1>Progress</h1>
       <div className="progress">
         <div>
-          <p>2 Finished</p>
-          <p>4 In progress</p>
+          <p>{finished} Finished</p>
+          <p>{inProgress} In progress</p>
         </div>
         <CircularProgressbar value={percentage} text={`${percentage}%`} />;
       </div>
