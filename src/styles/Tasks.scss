@@ -8,19 +8,43 @@ main {
     background-color: var(--secondary);
     border-radius: 2rem;
     padding: 2rem;
+    max-height: 30rem;
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 
   .task {
     display: flex;
     gap: 2rem;
+    position: relative;
 
-    img {
+    .checkbox {
       width: 2.5rem;
+
+      &:hover {
+        cursor: pointer;
+        width: 2.6rem;
+      }
     }
 
     p {
       font-size: var(--lg);
       margin: 1rem 0;
+    }
+
+    .close {
+      width: 2rem;
+      position: absolute;
+      top: 1.25rem;
+      right: 1rem;
+
+      &:hover {
+        cursor: pointer;
+        width: 2.1rem;
+      }
     }
   }
 }

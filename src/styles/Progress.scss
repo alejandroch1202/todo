@@ -3,6 +3,7 @@ aside {
   flex-direction: column;
   justify-content: space-between;
   border-radius: 2rem;
+  position: relative;
 
   h1 {
     color: var(--gray);
@@ -20,10 +21,6 @@ aside {
       font-size: var(--md);
       color: var(--dark);
     }
-
-    img {
-      width: 12rem;
-    }
   }
 
   .add {
@@ -31,8 +28,13 @@ aside {
     align-items: center;
     justify-content: center;
 
-    img {
+    .addButton {
       width: 3rem;
+
+      &:hover {
+        width: 3.1rem;
+        cursor: pointer;
+      }
     }
 
     h2 {

@@ -1,35 +1,20 @@
-import React from "react";
-import checkboxImg from "@assets/checkbox.svg";
-import squareImg from "@assets/square.svg";
+import React, { useContext } from "react";
+import Task from "@components/Task";
+import AppContext from "@context/AppContext";
 import "@styles/Tasks.scss";
 
 const Tasks = () => {
+  const { state } = useContext(AppContext);
+
   return (
     <main>
       <h1>Tasks</h1>
 
       <div className="content">
         <div className="tasks">
-          <div className="task">
-            <img src={checkboxImg} alt="check" />
-            <p>Task 1</p>
-          </div>
-          <div className="task">
-            <img src={checkboxImg} alt="check" />
-            <p>Task 2</p>
-          </div>
-          <div className="task">
-            <img src={squareImg} alt="check" />
-            <p>Task 3</p>
-          </div>
-          <div className="task">
-            <img src={squareImg} alt="check" />
-            <p>Task 4</p>
-          </div>
-          <div className="task">
-            <img src={squareImg} alt="check" />
-            <p>Task 5</p>
-          </div>
+          {state.tasks.map((task) => (
+            <Task key={task.title} task={task} />
+          ))}
         </div>
       </div>
     </main>
