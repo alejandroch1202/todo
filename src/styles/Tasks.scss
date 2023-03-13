@@ -1,14 +1,16 @@
 main {
+  grid-row: 2;
+
   h1 {
     color: var(--gray);
-    margin-left: 1rem;
+    margin: 1rem 1rem;
   }
 
   .tasks {
     background-color: var(--secondary);
     border-radius: 2rem;
     padding: 2rem;
-    max-height: 30rem;
+    max-height: 35rem;
     overflow-y: scroll;
 
     &::-webkit-scrollbar {
@@ -45,6 +47,16 @@ main {
         cursor: pointer;
         width: 2.1rem;
       }
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  main {
+    grid-row: inherit;
+
+    .tasks {
+      max-height: 30rem;
     }
   }
 }

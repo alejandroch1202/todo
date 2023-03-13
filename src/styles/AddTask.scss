@@ -9,7 +9,7 @@
   position: absolute;
   overflow: hidden;
   background-color: var(--white);
-  top: 5rem;
+  top: 12rem;
   left: 2rem;
 
   .title {
@@ -80,5 +80,11 @@
         width: 10.2rem;
       }
     }
+  }
+}
+
+@media (min-width: 992px) {
+  .addTask {
+    top: 5rem;
   }
 }

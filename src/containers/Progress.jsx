@@ -33,7 +33,10 @@ const Progress = () => {
           <p>{finished} Finished</p>
           <p>{inProgress} In progress</p>
         </div>
-        <CircularProgressbar value={percentage} text={`${percentage}%`} />;
+
+        <div className="progressBar">
+          <CircularProgressbar value={percentage} text={`${percentage}%`} />
+        </div>
       </div>
 
       <div className="add">

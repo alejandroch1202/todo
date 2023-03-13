@@ -24,10 +24,17 @@ body {
   font-family: var(--main-font);
 }
 #root {
+  height: 100vh;
+  overflow: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
   background-color: var(--gray);
+}
+
+@media (min-width: 992px) {
+  #root {
+    height: 100vh;
+  }
 }
