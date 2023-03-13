@@ -32,22 +32,22 @@ const Task = (task) => {
               color: "#4f4e4e",
             }}
           >
-            {task.task.title}
+            {task.task.text}
           </p>
           <img
             className="close"
             src={closeImg}
-            alt={task.task.title}
+            alt={task.task.text}
             onClick={handleRemove}
           />
         </>
       ) : (
         <>
-          <p>{task.task.title}</p>
+          <p>{task.task.text}</p>
           <img
             className="close"
             src={closeImg}
-            alt={task.task.title}
+            alt={task.task.text}
             onClick={handleRemove}
           />
         </>

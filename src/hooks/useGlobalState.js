@@ -1,40 +1,56 @@
 import { useState } from "react";
 
 const useGlobalState = () => {
-  const initalState = {
-    tasks: [
-      { title: "Tasks finished", done: true },
-      { title: "Task in progress", done: false },
-    ],
-  };
+  const localTasks = localStorage.getItem("TASKS_V1");
+  let initialState;
 
-  const [state, setState] = useState(initalState);
+  if (!localTasks || localTasks === '{"tasks":[]}') {
+    initialState = {
+      tasks: [
+        { text: "Tasks finished", done: true },
+        { text: "Task in progress", done: false },
+      ],
+    };
+
+    localStorage.setItem("TASKS_V1", JSON.stringify(initialState));
+  } else {
+    initialState = JSON.parse(localTasks);
+  }
+
+  const [state, setState] = useState(initialState);
 
   const addTask = (task) => {
-    setState({
+    const newState = {
       ...state,
       tasks:
-        state.tasks.filter((items) => items.title === task.title).length > 0
+        state.tasks.filter((items) => items.text === task.text).length > 0
           ? state.tasks
           : [...state.tasks, task],
-    });
+    };
+    setState(newState);
+    localStorage.setItem("TASKS_V1", JSON.stringify(newState));
   };
 
   const removeTask = (task) => {
-    setState({
+    const newState = {
       ...state,
       tasks: state.tasks.filter((items) => items !== task),
-    });
+    };
+    setState(newState);
+    localStorage.setItem("TASKS_V1", JSON.stringify(newState));
   };
 
   const toggleDone = (task) => {
-    state.tasks.find((items) => items.title === task.title).done =
-      !state.tasks.find((items) => items.title === task.title).done;
+    state.tasks.find((items) => items.text === task.text).done =
+      !state.tasks.find((items) => items.text === task.text).done;
 
-    setState({
+    const newState = {
       ...state,
       tasks: state.tasks,
-    });
+    };
+
+    setState(newState);
+    localStorage.setItem("TASKS_V1", JSON.stringify(newState));
   };
 
   const [showAddTask, setShowAddTask] = useState(false);

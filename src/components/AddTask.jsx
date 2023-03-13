@@ -8,7 +8,7 @@ const AddTask = () => {
   const inputTask = useRef();
 
   const handleAddtask = () => {
-    addTask({ title: inputTask.current.value, done: false });
+    addTask({ text: inputTask.current.value, done: false });
     toggleAddTask();
   };
 

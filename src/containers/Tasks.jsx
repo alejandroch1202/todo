@@ -13,7 +13,7 @@ const Tasks = () => {
       <div className="content">
         <div className="tasks">
           {state.tasks.map((task) => (
-            <Task key={task.title} task={task} />
+            <Task key={task.text} task={task} />
           ))}
         </div>
       </div>
